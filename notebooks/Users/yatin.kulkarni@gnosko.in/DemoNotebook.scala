@@ -7,3 +7,7 @@ display(dbutils.fs.ls("/databricks-datasets/samples/docs/"))
 //   Note this is lazy 
 val textFile = sc.textFile("/databricks-datasets/samples/docs/README.md")
 
+// When performing an action (like a count) this is when the textFile is read and aggregate calculated
+//    Click on [View] to see the stages and executors
+textFile.count()
+
